@@ -31,6 +31,7 @@ public class WebSteps {
 
 	@When("^he navigates to \"(.*)\" website\\.$")
 	public void he_navigates_to_website(String appWebsite) throws Throwable {
+		driver.get("https://www.amazon.com/");
 		 System.out.println("I am in the second step");
 	}
 
