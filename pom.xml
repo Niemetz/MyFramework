@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.vencore</groupId>
-  <artifactId>ciap</artifactId>
+  <artifactId>automationtemplate</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>ciap</name>
+  <name>automationtemplate</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,6 +15,14 @@
   </properties>
 
   <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.9.3</version>
+</dependency>
+  
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
 	<dependency>
 		<groupId>junit</groupId>
@@ -47,13 +55,20 @@
 		<scope>test</scope>
 	</dependency>
 
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server 
 	<dependency>
 		<groupId>org.seleniumhq.selenium</groupId>
 		<artifactId>selenium-server</artifactId>
 		<version>3.0.0-beta3</version>
 		<scope>test</scope>
-	</dependency> 
+	</dependency> -->
+
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-server</artifactId>
+		<version>2.53.1</version>
+	</dependency>
 
 	<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging  -->
 	<dependency>
@@ -67,6 +82,22 @@
   
       <build>
         <plugins>
+                <!-- Sereniry jar for reporting capability  
+                <plugin>
+                <groupId>net.serenity-bdd.maven.plugins</groupId>
+                <artifactId>serenity-maven-plugin</artifactId>
+                <version>1.1.2</version>
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin> -->
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -84,7 +115,7 @@
 	          <version> 2.19.1</version>
 	          <configuration>
 	                <includes>
-	                     <exclude>**/*RunnerTest.java </exclude>
+	                     <exclude>**/*RunCukesTest.java </exclude>
 	                </includes>
 	          </configuration>
             </plugin>
